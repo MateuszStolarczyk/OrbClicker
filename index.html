@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <title>Orb Clicker</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" href="Logo.png" type="image/x-icon">
+    </head>
+    <body>
+        <div id="intro">
+            <p id="informacja">Naciśnij na ekran, aby zacząć!</p>
+            <img src="intro/Ladowanie.png" alt="Ładowanie" id="ladowanie">
+            <p id="LadowanieTekst">Ładowanie...</p>
+            <img src="intro/IntroTlo.png" id="IntroTlo">
+            <img src="intro/IntroNapis.png" id="IntroNapis">
+            <img src="Logo.png" id="logoIntro">
+        </div>
+        <div id="cheaty">
+            <div id="x" onclick="zamknijCheaty()">Wyjdź</div>
+            <div id="kod">
+                Wprowadź kod, aby uzyskać dostęp do ułatwień! <br>
+                <input type="text" placeholder="Wpisz kod..." id="wpisz"><br>
+                <input type="button" value="Zatwierdź" id="zatwierdz" onclick="sprawdzKod()">
+                <p id="zle"></p>
+            </div>
+            <div id="dodatki">
+                <p class="tytul">Ile chcesz dodać kasy?</p>
+                <div id="opcje">
+                    <div id="plus1k" onclick="cheatyDodajKase(1000)">1k</div>
+                    <div id="plus10k" onclick="cheatyDodajKase(10000)">10k</div>
+                    <div id="plus100k" onclick="cheatyDodajKase(100000)">100k</div>
+                    <div id="plus1m" onclick="cheatyDodajKase(1000000)">1m</div>
+                    <div id="plus10m" onclick="cheatyDodajKase(10000000)">10m</div>
+                    <div id="plus100m" onclick="cheatyDodajKase(100000000)">100m</div>
+                    <div id="plus100m" onclick="cheatyDodajKase(1000000000)">1B</div>
+                    <div id="plus100m" onclick="cheatyDodajKase(10000000000)">10B</div>
+                </div>
+            </div>
+        </div>
+        <main id="glowny">
+            <header>
+                    <div id="nazwaGry">Orb Clicker</div>
+                    <img src="Logo.png" alt="Logo gry Orb Clicker" id="logo">
+                    <img src="img/zs10zabrze.png" alt="zs10zabrze" id="zs10Logo" onclick="otworzCheaty()">
+                    <img src="img/full.png" alt="Przełącz muzykę" title="Wyłącz muzykę w tle" id="muzyka" onclick="Muzyka()">
+                    <a href=""><img src="img/GitHub.png" alt="GitHub" id="GitHub" title="Zobacz kod"></a>
+                </header>
+                
+            <div id="strona">
+                
+                <div id="gra">
+                    <div id="hud">
+                        <p id="mnoznikHUD">Mnożnik: x1</p>
+                        <p id="money">Kasa: 0$</p>
+                        <p id="kns">KNS: 0$/s</p>
+                        <p id="pkns">PKNS: 0$/s</p>
+                        <p id="pomocnicy">Pomocnicy: 0</p>
+                    </div>
+                    <div id="pole">
+                        <p id="bonusInfo">BonusInfo</p>
+                        <div id="bonus" title="AutoClicker x5!!!" onclick="BonusDodajKase()">
+                            <img src="Bonusy/BonusowaKasa.png" alt="AutoClicker" id="imgBonus">
+                        </div>
+                        <div class="guzik" id="guzik" onclick="animacja(); dodajKase()">1$</div>
+                        <p id="levelInfo">Level:1</p>
+                    </div>
+                    <div id="ulepszenia">
+                        <div class="ulepszenie" id="mocKlik">
+                            <p class="nazwa">Moc kliknięcia</p><br>
+                            <p class="moc" id="m1">1$>2$</p>
+                            <p class="cena" id="u1">10$</p>
+                            <button class="kup" onclick="kupU1()">Kup</button>
+                        </div>
+                        <div class="ulepszenie" id="autoClick">
+                            <p class="nazwa">Auto clicker</p><br>
+                            <p class="moc" id="m2">0$>1$</p>
+                            <p class="cena" id="u2">10$</p>
+                            <button class="kup" onclick="kupU2()">Kup</button>
+                        </div>
+                        <div class="ulepszenie" id="mnoznik">
+                            <p class="nazwa">Mnożnik</p><br>
+                            <p class="moc" id="m3">x1>x1.5</p>
+                            <p class="cena" id="u3">10$</p>
+                            <button class="kup" onclick="kupU3()">Kup</button>
+                        </div>
+                        <div class="ulepszenie" id="pomocnik">
+                            <p class="nazwa">Pomocnicy</p><br>
+                            <p class="moc" id="m4">0>1</p>
+                            <p class="cena" id="u4">10$</p>
+                            <button class="kup" onclick="kupU4()">Kup</button>
+                        </div>
+                        <div class="ulepszenie" id="dodatkoweKolo">
+                            <p class="nazwa">Level</p><br>
+                            <p class="moc" id="m5">1>2</p>
+                            <p class="cena" id="u5">10$</p>
+                            <button class="kup" onclick="kupU5()" id="kupGuzika">Kup</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="info">
+                    <p id="titleInfo">Informacje o grze!</p>
+                    <div id="tresc">
+                        Gra typu clicker. Klikasz i zarabiasz kasę!<br>
+                        Im więcej klikasz, tym więcej masz. A im więcej masz, tym więcej możesz ulepszyć. <br>
+                        Gra w teorii nie ma końca, bo wszystko działa na mnożnikach i rosnących cenach, więc liczby mogą lecieć w kosmos. <br>
+
+                        Twój cel:
+                        <ul class="pomoc">
+                        <li>Kupić 15 level</li>
+                        <li>Zdobyć 100 pomocników</li> 
+                        <li>Zrobić jak największy KNS</li>  
+                        </ul>
+                        Co tu w ogóle jest?
+
+                        <ul class="pomoc">
+                            <li><b>KNS</b> - czyli Kasa Na Sekundę. Lecą pieniądze nawet jak nic nie klikasz.</li>
+                            <li><b>PKNS</b> - czyli Pomocnicza Kasa Na Sekundę. Pomocnicy pracują szybciej od ciebie.</li>
+                            <li><b>Moc kliknięcia</b> - jedno kliknięcie = więcej kasy.</li>
+                            <li><b>Auto clicker</b> - klika za Ciebie, trochę wolniej, ale zawsze coś.</li>
+                            <li><b>Mnożnik</b> - zwiększa wszystko. Po prostu wszystko.</li>
+                            <li><b>Pomocnik</b> - lepsza wersja auto clickera. Szybszy i mocniejszy.</li>
+                            <li><b>Level</b> - dodaje dodatkowy mnożnik, większa kasa za klik.</li>
+                        </ul>
+                        Gra posiada też licznik czasu gry, który włącza się z pierwszym kliknięciem w ekran, a także łączną ilość kliknięć w guzik! <br>
+                        W grze jest mały sekret, do którego trzeba wpisać hasło. Jak ktoś dobrze pomyśli, to hasło jest całkiem łatwe.
+                    </div>
+                    <div id="legenda">
+                        <h2>Bonusy i nie bonusy</h2>
+                        <p><b>Bonusy pojawiają się w losowych odstępach czasu (max 1 min). Takie same bonusy nie nakładają się na siebie, więc jeżeli masz już jakiś bonus czasowy i dostaniesz nowy to tracisz ten który zdobyłeś jako drugi. Gra posiada takie bonusy jak:</b></p> <br>
+                        <p><img src="Bonusy/BonusowaKasa.png" alt="BonusowaKasa"> Bonusowa kasa - w zależności od twojego progresu, daje ci wyznaczoną ilość kasy</p>
+                        <p><img src="Bonusy/AutoClicker.png" alt="AutoClicker"> Autoclicker bonus - zwiększa moc aktualnie kupionego autoclickera x5 (1 min)</p>
+                        <p><img src="Bonusy/Pomocnicy.png" alt="Pomocnicy"> Pomocnicy x2 - podwaja ilość twojej taniej siły roboczej (1,5 min)</p>
+                        <p><img src="Bonusy/SuperKlik.png" alt="SuperKlik"> Super Klik - dostajesz 10x silniejszy klik (25 sek)</p>
+                        <p><img src="Bonusy/Rachunek.png" alt="Rachunek"> Rachunek - no rachunki, trzeba je płacić, co nie?</p>
+                        <p><img src="Bonusy/Komornik.png" alt="Komornik"> Komornik - było i nie ma :D</p>
+                    </div>
+                </div>
+            </div>
+            <footer>
+                <p id="wersja">Wersja: 1.0</p>
+                <p id="czasGry">00:00:00</p>
+                <p id="razem">Łączna ilość kliknięć: 0</p>
+            </footer>
+        </main>
+        <script src="script.js"></script>
+    </body>
+</html>

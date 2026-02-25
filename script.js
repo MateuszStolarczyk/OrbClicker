@@ -591,7 +591,7 @@ function komornik(){
     ZLYKOD.currentTime = 0;
     ZLYKOD.play();
     kasa = 0
-    infoBonus(`Komornik przyszedł i zabrał kaske :(`)
+    infoBonus(`Komornik przyszedł i zabrał kasę :(`)
     LosujBonusa()
 }
 

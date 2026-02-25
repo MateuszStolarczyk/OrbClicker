@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://example.com">
+  <a href="https://mateuszstolarczyk.github.io/OrbClicker/">
     <img src="Logo.png" alt="Logo OrbClicker" width="200"/>
   </a>
 </p>

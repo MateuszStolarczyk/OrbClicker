@@ -1,3 +1,9 @@
+document.addEventListener('click', async () => {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+    }
+});
+
 // Ceny
 let cenaKlik = 20;
 let cenaAutoKlik = 1000;
@@ -262,14 +268,10 @@ aktualizacjaDanych()
 
 // Animacja guzików
 function animacja(){
-    guzik.style.width = "325px"
-    guzik.style.height = "325px"
-    guzik.style.fontSize = "175%"
+    guzik.style.transform = "scale(1.1)"
     setTimeout(function() {
-        guzik.style.width = "300px"
-        guzik.style.height = "300px"
-        guzik.style.fontSize = "150%"
-    }, 200)
+        guzik.style.transform = "scale(1.0)"
+    }, 250)
 }
 
 // Dodawanie kasy

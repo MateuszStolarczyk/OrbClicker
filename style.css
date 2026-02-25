@@ -12,17 +12,17 @@ body{
     margin: 0 auto;
     background-color: #1e1630;
     width: 85%;
-    height: 870px;
+    min-height: 100vh;
     overflow: auto;
     align-content: center;
     position: relative;
+    touch-action: manipulation;
 }
 #strona{
     overflow: auto;
-    height: 745px;
-    padding-bottom: 40px;
-    position: absolute;
-    top: 125px;
+    padding-bottom: 50px;
+    position: relative;
+    top: 140px;
 }
 header{
     background-color: #2a1f45;
@@ -56,18 +56,23 @@ header{
     border: #0d0818 5px solid;
     background-color: #24183d;
     width: 95%;
-    height: 600px;
+    min-height: 600px;
     margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
 }
 #hud{
     background-color: #2e2150;
     border-bottom: #0d0818 5px solid;
     padding: 5px;
+    padding-top: 16px;
     display: flex;
     justify-content: center;
     gap: 20px;
     width: 100%;
     position: relative;
+    flex-wrap: wrap;
+    font-size: 25px;
 }
 p#money, p#kns, p#pkns, #mnoznikHUD, #pomocnicy {
     color: #f2ecff;
@@ -140,7 +145,7 @@ p#money, p#kns, p#pkns, #mnoznikHUD, #pomocnicy {
     justify-content: center;
     align-items: center;
     gap: 5px;
-    overflow: auto;
+    overflow-y: auto;
 }
 .ulepszenie{
     width: 100%;
@@ -190,10 +195,16 @@ p#money, p#kns, p#pkns, #mnoznikHUD, #pomocnicy {
     border: #0d0818 5px solid;
     background-color: #31235a;
     width: 95%;
-    height: 600px;
+    min-height: 500px;
+    max-height: 800px;
     margin: 0 auto;
     margin-top: 20px;
+    margin-bottom: 120px;
     color: #e9e3ff;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 #titleInfo{
     background-color: #2e2150;
@@ -209,7 +220,6 @@ p#money, p#kns, p#pkns, #mnoznikHUD, #pomocnicy {
 #tresc{
     padding: 5px 0px 5px 5px;
     width: 50%;
-    height: 545px;
     font-size: 23px;
     overflow-y: auto;
     float: left;
@@ -218,7 +228,6 @@ p#money, p#kns, p#pkns, #mnoznikHUD, #pomocnicy {
 #legenda{
     padding: 5px 0px 5px 5px;
     width: 50%;
-    height: 545px;
     font-size: 23px;
     overflow-y: auto;
     float: left;
@@ -233,11 +242,13 @@ p#money, p#kns, p#pkns, #mnoznikHUD, #pomocnicy {
 #legenda p{
     display: flex;
     align-items: center;
-    gap: 15px;        /* odstęp między obrazkiem a tekstem */
-    margin: 10px 0;   /* odstęp między liniami */
+    gap: 15px;
+    margin: 10px 0;
 }
-#legenda img{
+#legenda p img{
     float: left;
+    width: 80px;
+    height: 80px;
 }
 .pomoc{
     font-size: 25px;
@@ -250,22 +261,25 @@ footer{
     width: 100%;
     border: #0d0818 5px solid;
     left: 0px;
-    padding: 2px;
+    padding: 10px;
     display: flex;
     align-content: center;
     justify-content: center;
+    z-index: 1000;
 }
 #razem{
     position: absolute;
-    right: 0px;
+    right: 10px;
     margin: 0;
-    top: 0;
+    top: 50%;
+    transform: translateY(-50%);
 }
 #wersja{
     position: absolute;
-    left: 0px;
+    left: 10px;
     margin: 0;
-    top: 0;
+    top: 50%;
+    transform: translateY(-50%);
 }
 #czasGry{
     margin: 0;
@@ -300,13 +314,10 @@ footer{
     width: 80%;
     -webkit-user-drag: none;
 }
-#bonus:hover{
-    transform: scale(1.2);
-}
 /* Cheaty */
 #cheaty{
     color: #e9e3ff;
-    z-index: 1000;
+    z-index: 10000;
     left: 0px;
     top: 0px;
     width: 100%;
@@ -323,8 +334,10 @@ footer{
     background-color: #7b3fe4;
     border: #5a2bb5 5px solid;
     border-radius: 20px;
+    max-width: 90%;
     width: 500px;
-    height: 350px;
+    height: auto;
+    min-height: 350px;
     margin: 0 auto;
     position: relative;
     align-content: center;
@@ -337,6 +350,7 @@ footer{
     padding: 5px;
     font-weight: 600;
     font-size: 20px;
+    width: 80%;
 }
 #zatwierdz{
     background-color: #7b3fe4;
@@ -369,7 +383,7 @@ footer{
 }
 
 #dodatki{
-    padding: 20px;
+    padding: 10px;
     background-color: #7b3fe4;
     border: #5a2bb5 5px solid;
     border-radius: 20px;
@@ -380,6 +394,7 @@ footer{
     display: none;
     flex-direction: column;
     align-items: center;
+    overflow: auto;
 }
 
 .tytul{
@@ -390,9 +405,10 @@ footer{
 
 #opcje{
     display: grid;
-    grid-template-columns: repeat(4, 100px);
+    grid-template-columns: repeat(auto-fit, 100px);
     gap: 20px;
-    overflow: auto;
+    justify-content: center;
+    width: 100%;
 }
 
 #opcje div{
@@ -406,10 +422,6 @@ footer{
     align-items: center;
     user-select: none;
 }
-
-
-
-
 
 /* INTRO */
 #intro{
@@ -459,6 +471,7 @@ footer{
 }
 #logoIntro{
     position: absolute;
+    max-width: 90%;
     width: 500px;
     transition: 150ms;
     opacity: 0;
@@ -470,5 +483,152 @@ footer{
     width: 100px;
     top: 10px;
     right: 260px;
+}
 
+/* --- Responsywność --- */
+@media (max-width: 1430px) {
+    #IntroTlo{
+        height: 100%;
+        width: 100%;
+    }
+    #IntroNapis{
+        width: 80vh;
+        height: auto;
+    }
+    #logoIntro{
+        width: 40vh;
+        height: auto;
+    }
+    body{
+        width: 95%;
+    }
+    
+    header{ 
+        font-size: 60px;
+        height: 100px; 
+    }
+
+    #logo, #zs10Logo, #muzyka, #GitHub{ 
+        height: 80px;
+        width: auto;
+    }
+
+    #muzyka{ 
+        left: 100px;
+    }
+    
+    #GitHub{
+        right: 210px;
+    }
+
+    #strona{ 
+        top: 110px;
+    }
+    
+    #pole, #ulepszenia{ 
+        width: 100%; 
+        float: none; 
+        border: none;
+        height: auto;
+    }
+    #tresc, #legenda{
+        font-size: 15px;
+    }
+    .pomoc{
+        font-size: 18px;
+    }
+
+    #pole{
+        height: 400px;
+        border-bottom: 5px solid #0d0818;
+    }
+    
+    #hud{
+        padding-top: 5px;
+    }
+
+    #mnoznikHUD, #pomocnicy{
+        position: static;
+        width: 100%;
+        text-align: center;
+    }
+
+    .guzik{
+        width: 200px;
+        height: 200px;
+        font-size: 100%;
+    }
+    
+    footer{
+        font-size: 15px;
+        flex-direction: column;
+        height: auto;
+        padding: 20px 0;
+    }
+    #legenda p img{
+        float: left;
+        width: 50px;
+        height: 50px;
+    }  
+    #czasGry, #razem{
+        position: static;
+        transform: none;
+        text-align: center;
+        padding-top: 0.3%;
+    }
+
+    #bonus {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media (max-width: 1050px) {
+    header{ 
+        font-size: 45px;
+        height: 70px; 
+    }
+
+    #logo, #zs10Logo, #muzyka, #GitHub{ 
+        height: 50px;
+        width: auto;
+    }
+
+    #muzyka{ 
+        left: 60px;
+    }
+    
+    #GitHub{
+        right: 140px;
+    }
+
+    #strona{ 
+        top: 90px;
+    }
+}
+@media (max-width: 670px) {
+    header{ 
+        font-size: 30px;
+        height: 50px; 
+    }
+    #IntroNapis{
+        width: 40vh;
+        height: auto;
+    }
+    #logo, #zs10Logo, #muzyka, #GitHub{ 
+        height: 30px;
+        width: auto;
+    }
+
+    #muzyka{ 
+        left: 40px;
+    }
+    
+    #GitHub{
+        right: 90px;
+    }
+
+    #strona{ 
+        top: 90px;
+    }
 }

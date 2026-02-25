@@ -107,6 +107,7 @@ p#money, p#kns, p#pkns, #mnoznikHUD, #pomocnicy {
     top: 0px;
     transition: opacity 550ms;
     opacity: 0;
+    font-size: 25px !important;
 }
 #levelInfo{
     position: absolute;
@@ -487,6 +488,9 @@ footer{
 
 /* --- Responsywność --- */
 @media (max-width: 1430px) {
+    #bonusInfo{
+        font-size: 20px !important;
+    }
     #IntroTlo{
         height: 100%;
         width: 100%;
@@ -584,6 +588,9 @@ footer{
 }
 
 @media (max-width: 1050px) {
+    #bonusInfo{
+        font-size: 15px !important;
+    }
     header{ 
         font-size: 45px;
         height: 70px; 
@@ -607,6 +614,9 @@ footer{
     }
 }
 @media (max-width: 670px) {
+    #bonusInfo{
+        font-size: 15px !important;
+    }
     header{ 
         font-size: 30px;
         height: 50px; 

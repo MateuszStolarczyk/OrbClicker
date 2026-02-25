@@ -1,6 +1,7 @@
 *{
     box-sizing: border-box;
     scrollbar-color: #6d34d1 #1e1630;
+    -webkit-tap-highlight-color: transparent;
 }
 
 html{

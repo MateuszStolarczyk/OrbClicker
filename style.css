@@ -667,12 +667,21 @@ footer{
     }
 }
 @media (orientation: landscape){
+    #gra{
+        border: #0d0818 5px solid;
+        background-color: #24183d;
+        width: 95%;
+        min-height: 500px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+    }
     #pole{
         background-color: #31235a;
         border-right: #0d0818 5px solid;
         padding: 5px;
         width: 60%;
-        height: 539px;
+        height: 439px;
         float: left;
         position: relative;
     }
@@ -682,7 +691,7 @@ footer{
         border-left: #0d0818 5px solid;
         padding: 5px;
         width: 40%;
-        height: 539px;
+        height: 439px;
         justify-content: center;
         align-items: center;
         gap: 5px;

@@ -687,3 +687,20 @@ footer{
         overflow-y: auto;
     }
 }
+@media (orientation: landscape){
+    footer{
+        font-size: 15px;
+        flex-direction: column;
+        height: 30px;
+        padding: 20px 0;
+    }
+    #czasGry{
+        margin: 0 auto;
+    }
+    #razem{
+        position: absolute;
+        right: 10px;
+        margin: 0;
+        transform: translateY(-50%);
+    }
+}

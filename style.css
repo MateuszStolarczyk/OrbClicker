@@ -712,4 +712,28 @@ footer{
         margin: 0;
         transform: translateY(-50%);
     }
+    #hud{
+        background-color: #2e2150;
+        border-bottom: #0d0818 5px solid;
+        padding: 5px;
+        padding-top: 16px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        width: 100%;
+        position: relative;
+        flex-wrap: wrap;
+        font-size: 20px;
+    }
+
+    #mnoznikHUD{
+        left: 10px;
+        position: absolute;
+        width: auto;
+    }
+    #pomocnicy{
+        right: 10px;
+        position: absolute;
+        width: auto;
+    }
 }

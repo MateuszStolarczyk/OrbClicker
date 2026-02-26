@@ -125,6 +125,8 @@ p#money, p#kns, p#pkns, #mnoznikHUD, #pomocnicy {
     transition: opacity 550ms;
     opacity: 0;
     font-size: 25px !important;
+    word-wrap: normal;
+    text-align: center;
 }
 #levelInfo{
     position: absolute;
@@ -664,7 +666,7 @@ footer{
         padding-bottom: 0px;
     }
 }
-@media (orientation: landscape) and (min-width: 1200px) {
+@media (orientation: landscape){
     #pole{
         background-color: #31235a;
         border-right: #0d0818 5px solid;
@@ -686,8 +688,6 @@ footer{
         gap: 5px;
         overflow-y: auto;
     }
-}
-@media (orientation: landscape){
     footer{
         font-size: 15px;
         flex-direction: column;

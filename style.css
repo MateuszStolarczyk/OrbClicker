@@ -664,7 +664,7 @@ footer{
         padding-bottom: 0px;
     }
 }
-@media (orientation: landscape){
+@media (orientation: landscape) and (min-width: 1200px) {
     #pole{
         background-color: #31235a;
         border-right: #0d0818 5px solid;

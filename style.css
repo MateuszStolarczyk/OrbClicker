@@ -671,10 +671,6 @@ footer{
         padding: 5px;
         width: 60%;
         height: 539px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 5px;
         float: left;
         position: relative;
     }

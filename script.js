@@ -103,6 +103,8 @@ function skrocCene(numer) {
 }
 
 let levelInfo = document.getElementById("levelInfo")
+let jestIntro = true;
+
 // Statystyki początkowe
 function aktualizacjaDanych(){
     // Poziom
@@ -242,7 +244,7 @@ function aktualizacjaDanych(){
     cenaUlepszenie4.innerHTML = `${skrocCene(cenaPomocnik)}$`
 
     // Statystyki dla ulepszeń
-    dMoc1.innerHTML = `${skrocCene(moc*Mnoznik)}$ > ${skrocCene((moc+1)*Mnoznik)}$`
+    dMoc1.innerHTML = `${skrocCene(moc*Mnoznik*MnoznikGuzik)}$ > ${skrocCene((moc+1)*Mnoznik*MnoznikGuzik)}$`
     dMoc2.innerHTML = `${skrocCene(autoKlik*Mnoznik)}/s > ${skrocCene((autoKlik+2)*Mnoznik)}/s`
     dMoc3.innerHTML = `x${skrocCene(Mnoznik)} > x${skrocCene(Mnoznik+wzrostMnoznik)}`
     dMoc4.innerHTML = `${Math.floor(iloscPomoc)} > ${Math.floor(iloscPomoc)+1}`
@@ -259,6 +261,11 @@ function aktualizacjaDanych(){
         kupGuzika.style.backgroundColor = `#9a86cc`
         kupGuzika.style.borderColor = `#5c4c72`
         kupGuzika.style.color = `#453061`
+    }
+    if(jestIntro){
+        document.body.style.overflow = "hidden"
+    } else{
+        document.body.style.overflow = "auto"
     }
 
     setTimeout(aktualizacjaDanych, 50);
@@ -412,7 +419,7 @@ function zamknijCheaty(){
 
 function sprawdzKod(){
     let wpisanyKod = document.getElementById("wpisz").value
-    if (wpisanyKod === kod){
+    if (wpisanyKod.toLowerCase() === kod.toLowerCase()){
         oknoKod.style.display = "none"
         oknoDodatki.style.display = "flex"
     } else{
@@ -527,12 +534,15 @@ function BonusDodajKase(){
 
 //Super Autoclicker
 function SuperAutoclicker(){
-    if (jestSuperAutoclickerBonus) return;
-    jestSuperAutoclickerBonus = true
-    infoBonus(`Dostajesz Autoclicker x5 na 1min`)
-    PLUSKASA.pause();
-    PLUSKASA.currentTime = 0;
-    PLUSKASA.play();
+    if (jestSuperAutoclickerBonus){
+        infoBonus(`Posiadasz już ten bonus!`)
+    } else {
+        jestSuperAutoclickerBonus = true
+        infoBonus(`Dostajesz Autoclicker x5 na 1min`)
+        PLUSKASA.pause();
+        PLUSKASA.currentTime = 0;
+        PLUSKASA.play();
+    }
     
     LosujBonusa()
 
@@ -543,13 +553,15 @@ function SuperAutoclicker(){
 
 // Pomocnicy x2
 function pomocX2(){
-    if (jestPomocBonus) return;
-    infoBonus(`Dostajesz pomocnicy x2 na 1.5 min`)
-    jestPomocBonus = true
-    PLUSKASA.pause();
-    PLUSKASA.currentTime = 0;
-    PLUSKASA.play();
-    
+    if (jestPomocBonus){
+        infoBonus(`Posiadasz już ten bonus!`)
+    } else {
+        infoBonus(`Dostajesz pomocnicy x2 na 1.5 min`)
+        jestPomocBonus = true
+        PLUSKASA.pause();
+        PLUSKASA.currentTime = 0;
+        PLUSKASA.play();
+    }
     LosujBonusa()
 
     setTimeout(function() {
@@ -559,13 +571,16 @@ function pomocX2(){
 
 // SuperKlik
 function BonusSuperKlik(){
-    if (jestSuperKlikBonus) return;
-    jestSuperKlikBonus = true
-    superKlik = 10
-    infoBonus(`Dostajesz moc kiknięcia x${superKlik} na 25 sek`)
-    PLUSKASA.pause();
-    PLUSKASA.currentTime = 0;
-    PLUSKASA.play();
+    if (jestSuperKlikBonus){
+        infoBonus(`Posiadasz już ten bonus!`)
+    } else {
+        jestSuperKlikBonus = true
+        superKlik = 10
+        infoBonus(`Dostajesz moc kiknięcia x${superKlik} na 25 sek`)
+        PLUSKASA.pause();
+        PLUSKASA.currentTime = 0;
+        PLUSKASA.play();
+    }
     LosujBonusa()
 
     setTimeout(function() {
@@ -702,6 +717,7 @@ intro.onclick = function(){
                 intro.style.opacity = 0
                 setTimeout(function(){
                     intro.style.display="none"
+                    jestIntro = false
                 },550)
             }   
             ,5000)

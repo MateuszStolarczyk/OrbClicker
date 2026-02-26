@@ -2,6 +2,8 @@
     box-sizing: border-box;
     scrollbar-color: #6d34d1 #1e1630;
     -webkit-tap-highlight-color: transparent;
+    -webkit-user-drag: none;
+    user-select: none;
 }
 
 html{
@@ -21,9 +23,9 @@ body{
 }
 #strona{
     overflow: auto;
-    padding-bottom: 50px;
+    padding-bottom: 80px;
     position: relative;
-    top: 140px;
+    top: 160px;
 }
 header{
     background-color: #2a1f45;
@@ -33,11 +35,24 @@ header{
     text-align: center;
     padding: 10px;
     position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 120px;
     width: 100%;
     left: 0px;
     z-index: 100;
     top: 0;
+    border-bottom: #0d0818 5px solid;
+}
+#kaska{
+    background-color: #2a1f45;
+    width: 500px;
+    position: absolute;
+    font-size: 30px;
+    border: #0d0818 5px solid;
+    border-top: none;
+    top: 115px;
 }
 #logo{
     width: 100px;
@@ -75,6 +90,7 @@ header{
     flex-wrap: wrap;
     font-size: 25px;
 }
+
 p#money, p#kns, p#pkns, #mnoznikHUD, #pomocnicy {
     color: #f2ecff;
     font-weight: 600;
@@ -118,7 +134,6 @@ p#money, p#kns, p#pkns, #mnoznikHUD, #pomocnicy {
     color: #d7c9ff;
     font-weight: bolder;
     font-size: 33px;
-    user-select: none;
 }
 .guzik {
     background-color: #7b3fe4;
@@ -133,7 +148,6 @@ p#money, p#kns, p#pkns, #mnoznikHUD, #pomocnicy {
     font-weight: 600;
     color: #1c0f33;
     border: #5a2bb5 5px solid;
-    user-select: none;
     font-size: 150%;
 }
 
@@ -307,14 +321,12 @@ footer{
     cursor: pointer;
     transition: 600ms;
     font-weight: 600;
-    user-select: none;
     position: absolute;
     top: 15px;
     right: 15px;
 }
 #imgBonus{
     width: 80%;
-    -webkit-user-drag: none;
 }
 /* Cheaty */
 #cheaty{
@@ -422,7 +434,6 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
-    user-select: none;
 }
 
 /* INTRO */
@@ -468,8 +479,6 @@ footer{
     transition: 150ms;
     opacity: 0;
     position: absolute;
-    user-select: none;
-    -webkit-user-drag: none;
 }
 #logoIntro{
     position: absolute;
@@ -477,8 +486,6 @@ footer{
     width: 500px;
     transition: 150ms;
     opacity: 0;
-    user-select: none;
-    -webkit-user-drag: none;
 }
 #GitHub{
     position: absolute;
@@ -487,8 +494,12 @@ footer{
     right: 260px;
 }
 
-/* --- Responsywność --- */
+/* Responsywność */
 @media (max-width: 1430px) {
+    #kaska{
+        width: 450px;
+        top: 95px;
+    }
     #bonusInfo{
         font-size: 20px !important;
     }
@@ -527,7 +538,7 @@ footer{
     }
 
     #strona{ 
-        top: 110px;
+        top: 140px;
     }
     
     #pole, #ulepszenia{ 
@@ -589,6 +600,10 @@ footer{
 }
 
 @media (max-width: 1050px) {
+    #kaska{
+        width: 400px;
+        top: 65px;
+    }
     #bonusInfo{
         font-size: 15px !important;
     }
@@ -611,10 +626,15 @@ footer{
     }
 
     #strona{ 
-        top: 90px;
+        top:  110px;
+        padding-bottom: 20px;
     }
 }
 @media (max-width: 670px) {
+    #kaska{
+        width: 350px;
+        top: 45px;
+    }
     #bonusInfo{
         font-size: 15px !important;
     }
@@ -641,5 +661,33 @@ footer{
 
     #strona{ 
         top: 90px;
+        padding-bottom: 0px;
+    }
+}
+@media (orientation: landscape) and (min-width: 1150px){
+    #pole{
+        background-color: #31235a;
+        border-right: #0d0818 5px solid;
+        padding: 5px;
+        width: 80%;
+        height: 539px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        float: left;
+        position: relative;
+    }
+    #ulepszenia{
+        float: right;
+        background-color: #261a44;
+        border-left: #0d0818 5px solid;
+        padding: 5px;
+        width: 20%;
+        height: 539px;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        overflow-y: auto;
     }
 }

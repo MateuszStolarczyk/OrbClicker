@@ -47,7 +47,7 @@ header{
 }
 #kaska{
     background-color: #2a1f45;
-    width: 500px;
+    width: 350px;
     position: absolute;
     font-size: 30px;
     border: #0d0818 5px solid;
@@ -59,6 +59,7 @@ header{
     position: absolute;
     left: 10px;
     top: 10px;
+    cursor: pointer;
 }
 #zs10Logo{
     position: absolute;
@@ -128,14 +129,16 @@ p#money, p#kns, p#pkns, #mnoznikHUD, #pomocnicy {
     word-wrap: normal;
     text-align: center;
 }
-#levelInfo{
-    position: absolute;
-    bottom: 0px;
-}
+
 #bonusInfo, #levelInfo{
     color: #d7c9ff;
     font-weight: bolder;
     font-size: 33px;
+}
+#levelInfo{
+    font-size: 25px;
+    position: absolute;
+    bottom: 0px;
 }
 .guzik {
     background-color: #7b3fe4;
@@ -455,16 +458,17 @@ footer{
     left: 0;
 }
 #ladowanie {
+    display: block;
     position: absolute;
     opacity: 0;
     width: 150px;
     animation: obracanie 3s infinite;
-    transform-origin: center;
 }
 #LadowanieTekst{
+    display: block;
     position: absolute;
-    display: none;
-    bottom: 35%;
+    bottom: 20px;
+    margin-top: 20px;
     opacity: 0;
 }
 
@@ -499,8 +503,9 @@ footer{
 /* Responsywność */
 @media (max-width: 1430px) {
     #kaska{
-        width: 450px;
+        width: 300px;
         top: 95px;
+        font-size: 22px;
     }
     #bonusInfo{
         font-size: 20px !important;
@@ -599,11 +604,47 @@ footer{
         width: 80px;
         height: 80px;
     }
+    @media (orientation: landscape){
+        #gra{
+            border: #0d0818 5px solid;
+            background-color: #24183d;
+            width: 95%;
+            min-height: 300px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        #pole{
+            background-color: #31235a;
+            border-right: #0d0818 5px solid;
+            padding: 5px;
+            width: 60%;
+            height: 339px;
+            float: left;
+            position: relative;
+        }
+        #ulepszenia{
+            float: right;
+            background-color: #261a44;
+            border-left: #0d0818 5px solid;
+            padding: 5px;
+            width: 40%;
+            height: 339px;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            overflow-y: auto;
+        }
+        #levelInfo{
+            font-size: 15px;
+        }
+    }
 }
 
 @media (max-width: 1050px) {
     #kaska{
-        width: 400px;
+        width: 300px;
+        font-size: 22px;
         top: 65px;
     }
     #bonusInfo{
@@ -667,36 +708,6 @@ footer{
     }
 }
 @media (orientation: landscape){
-    #gra{
-        border: #0d0818 5px solid;
-        background-color: #24183d;
-        width: 95%;
-        min-height: 500px;
-        margin: 0 auto;
-        display: flex;
-        flex-wrap: wrap;
-    }
-    #pole{
-        background-color: #31235a;
-        border-right: #0d0818 5px solid;
-        padding: 5px;
-        width: 60%;
-        height: 439px;
-        float: left;
-        position: relative;
-    }
-    #ulepszenia{
-        float: right;
-        background-color: #261a44;
-        border-left: #0d0818 5px solid;
-        padding: 5px;
-        width: 40%;
-        height: 439px;
-        justify-content: center;
-        align-items: center;
-        gap: 5px;
-        overflow-y: auto;
-    }
     footer{
         font-size: 15px;
         flex-direction: column;

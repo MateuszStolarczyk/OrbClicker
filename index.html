@@ -27,14 +27,14 @@
             <div id="dodatki">
                 <p class="tytul">Ile chcesz dodać kasy?</p>
                 <div id="opcje">
-                    <div id="plus1k" onclick="cheatyDodajKase(1000)">1k</div>
-                    <div id="plus10k" onclick="cheatyDodajKase(10000)">10k</div>
-                    <div id="plus100k" onclick="cheatyDodajKase(100000)">100k</div>
-                    <div id="plus1m" onclick="cheatyDodajKase(1000000)">1m</div>
-                    <div id="plus10m" onclick="cheatyDodajKase(10000000)">10m</div>
-                    <div id="plus100m" onclick="cheatyDodajKase(100000000)">100m</div>
-                    <div id="plus100m" onclick="cheatyDodajKase(1000000000)">1B</div>
-                    <div id="plus100m" onclick="cheatyDodajKase(10000000000)">10B</div>
+                    <div onclick="cheatyDodajKase(1000)">1k</div>
+                    <div onclick="cheatyDodajKase(10000)">10k</div>
+                    <div onclick="cheatyDodajKase(100000)">100k</div>
+                    <div onclick="cheatyDodajKase(1000000)">1m</div>
+                    <div onclick="cheatyDodajKase(10000000)">10m</div>
+                    <div onclick="cheatyDodajKase(100000000)">100m</div>
+                    <div onclick="cheatyDodajKase(1000000000)">1B</div>
+                    <div onclick="cheatyDodajKase(10000000000)">10B</div>
                 </div>
             </div>
         </div>
@@ -44,8 +44,11 @@
                     <div id="kaska">
                         <p id="money">Kasa: 0.00$</p>
                     </div>
-                    <img src="Logo.png" alt="Logo gry Orb Clicker" id="logo">
-                    <img src="img/zs10zabrze.png" alt="zs10zabrze" id="zs10Logo" onclick="otworzCheaty()">
+                    <img src="Logo.png" alt="Logo gry Orb Clicker" id="logo" onclick="otworzCheaty()">
+                    <a href="https://www.zs10.zabrze.pl/" target="_blank">
+                        <img src="img/zs10zabrze.png" alt="zs10zabrze" id="zs10Logo" title="Strona szkoły :D">
+                    </a>
+                    
                     <img src="img/full.png" alt="Przełącz muzykę" title="Wyłącz muzykę w tle" id="muzyka" onclick="Muzyka()">
                     <a href="https://github.com/MateuszStolarczyk/OrbClicker" target="_blank"><img src="img/GitHub.png" alt="GitHub" id="GitHub" title="Zobacz kod"></a>
                 </header>

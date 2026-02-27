@@ -710,7 +710,6 @@ intro.onclick = function(){
             introLadowanie.style.transition = "opacity 550ms"
             introLadowanie.style.opacity = 1
             LadowanieTekst.style.transition = "opacity 550ms"
-            LadowanieTekst.style.display = "block"
             LadowanieTekst.style.opacity = 1
             setTimeout(function(){
                 intro.style.transition = "opacity 550ms"

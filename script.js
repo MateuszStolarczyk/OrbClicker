@@ -1,8 +1,8 @@
-document.addEventListener('click', async () => {
+document.onclick = function(){
     if (!document.fullscreenElement) {
         document.documentElement.requestFullscreen();
     }
-});
+};
 
 // Ceny
 let cenaKlik = 20;
@@ -726,3 +726,4 @@ intro.onclick = function(){
     ,3000)
     intro.onclick = ""
 }
+

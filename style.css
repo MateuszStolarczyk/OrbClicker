@@ -503,7 +503,6 @@ footer{
     border: #0d0818 5px solid;
     background-color: #24183d;
     width: 95%;
-    min-height: 300px;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
@@ -513,7 +512,6 @@ footer{
     border-right: #0d0818 5px solid;
     padding: 5px;
     width: 60%;
-    height: 339px;
     float: left;
     position: relative;
 }
@@ -523,7 +521,6 @@ footer{
     border-left: #0d0818 5px solid;
     padding: 5px;
     width: 40%;
-    height: 339px;
     justify-content: center;
     align-items: center;
     gap: 5px;
@@ -751,3 +748,4 @@ footer{
     }
 
 }
+
